@@ -1,0 +1,54 @@
+﻿Pc1 command : ipconfig /all
+Pc3 command : ipconfig /all
+Pc1 command :ping 10.10.1.18
+Pc1 command:tracert 10.10.1.18 
+R1 CLI
+User Access Verification
+password : cisco
+R1> en
+password : class
+R1#show ip interface brief
+R1#: show ip route
+R3 CLI
+User Access Verification
+password : cisco
+R3> en
+password : class
+R3#show ip interface brief
+R3#: show ip route
+R2 CLI
+User Access Verification
+password : cisco
+R2> en
+password : class
+R2#show ip interface brief
+R2#conf t
+R2(config)#int s0/0/0
+R2(config-if) # no ip add
+R2(config-if) #ip add 10.10.1.5 255.255.255.252
+R2(config-if) #no shut
+R2(config-if) #end
+R2#show ip interface brief
+PC1
+Pc1 command :ping 10.10.1.18
+PC3
+Pc3 command : ping 10.10.1.98
+PC2 
+Pc2 command: ipv6config /all
+PC4 
+Pc4 command:ipv6config /all
+PC2 
+Pc2 command:ping 2001:DB8:1:4::2 
+Pc2 command:tracert 2001:DB8:1:4::2
+PC4 
+Pc4 command:tracert 2001:DB8:1:1::2
+R3
+User Access Verification
+Password:cisco 
+R3>en
+Password:class
+R3#show ipv6 interface brief
+PC2
+Pc2 command:ping 2001:DB8:1:4::2
+PC4
+C:\>ping 2001:DB8:1:1::2
